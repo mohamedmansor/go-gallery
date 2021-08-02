@@ -27,10 +27,10 @@ func NewImageRoute(
 func (p ImageRoute) Setup() {
 	post := p.Handler.Gin.Group("/posts") //Router group
 	{
-		post.GET("/", p.Controller.GetImages)
-		post.POST("/", p.Controller.AddImage)
-		post.GET("/:id", p.Controller.GetImage)
+		post.GET("/images/", p.Controller.GetImages)
+		post.POST("/images/", p.Controller.AddImage)
+		post.GET("/images/:id", p.Controller.GetImage)
 		post.DELETE("/:id", p.Controller.DeleteImage)
-		post.PUT("/:id", p.Controller.UpdateImage)
+		post.PUT("/images/:id", p.Controller.UpdateImage)
 	}
 }
