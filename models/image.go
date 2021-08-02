@@ -3,8 +3,10 @@ package models
 import "time"
 
 type Image struct {
-	ID        int64     `gorm:"primary_key;auto_increment" json:"id"`
-	Title     string    `gorm:"size:200" json:"title"`
+	ID       int64  `gorm:"primary_key;auto_increment" json:"id"`
+	Title    string `gorm:"size:200" json:"title"`
+	ImageUrl string `json:"imgpath"`
+	// ImageUrl	string        `bson:"imgUrl"`
 	CreatedAt time.Time `json:"created_at,omitempty"`
 	UpdatedAt time.Time `json:"updated_at,omitempty"`
 }
